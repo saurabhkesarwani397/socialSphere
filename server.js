@@ -25,8 +25,7 @@ io.use(authSocket);
 io.on("connection", (socket) => socketServer(socket));
 
 mongoose.connect(
-'mongodb+srv://saurabhkesarwani397:saurabhkesarwani397@cluster0.kufl758.mongodb.net/socialsphere?retryWrites=true&w=majority&appName=Cluster0
-',
+  process.env.MONGO_URI,
   { useNewUrlParser: true, useUnifiedTopology: true },
   () => {
     console.log("MongoDB connected");
